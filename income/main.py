@@ -52,7 +52,8 @@ def test(classifiers, test_x, test_y):
 
 if __name__ == '__main__':
 
-	train_x, train_y, test_x, test_y  = data.main('winequality-white.csv')
+	train_x, train_y, test_x, test_y  = data.main('adult_data.csv')
+	
 	classifiers = train(train_x, train_y)
 	results = test(classifiers, test_x, test_y)
 	print(results)
