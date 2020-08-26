@@ -10,8 +10,10 @@ import random
 def main(filename):
 	data = get_all_data(filename)
 	training_data, testing_data = separate_data_fixed(0.8, data)
+	train_x, train_y = parse(training_data)
+	test_x, test_y = parse(testing_data)
 
-	return training_data, testing_data
+	return train_x, train_y, test_x, test_y
 
 def get_all_data(filename):
 	''' This function simply reads the csv into a dictionary which will then be parsed by the various learners depending on what 

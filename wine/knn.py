@@ -8,15 +8,12 @@ import data
 from sklearn.neighbors import KNeighborsClassifier
 
 
-def main(training_data, testing_data):
+def main(train_x, train_y):
 	''' This is the function carry out the knn classifier '''
 
-	train_x, train_y = data.parse(training_data)
-	test_x, test_y = data.parse(testing_data)
-
-	knn = train(train_x, train_y, 50)
-	results = test(knn, test_x, test_y)
-	print(results)
+	knn = train(train_x, train_y, 400)
+	
+	return knn
 
 
 def tune(training_data, testing_data, k):
@@ -35,12 +32,6 @@ def tune(training_data, testing_data, k):
 
 
 
-def predict(classifier, sample):
-	''' this is a function to use the existing classifier to predict an outcome based on a sample'''
-	return classifier.predict([sample])
-
-
-
 def train(x, y, k):
 	''' this is the function to train the knn classifier '''
 
@@ -48,19 +39,3 @@ def train(x, y, k):
 	classifier.fit(x, y)
 
 	return classifier
-
-
-
-def test(classifier, x, y):
-	''' this is the function to test the knn classifier '''
-
-	correct = 0
-	total = 0
-
-	for index, each in enumerate(x):
-		total += 1
-		result = predict(classifier, each)
-		if result == y[index]:
-			correct += 1
-
-	return round(correct / total, 3)

@@ -7,7 +7,7 @@ Thoughts
 
 Decision Tree Thoughts
 
-1. Max success rate occurs at max depth of 2, success rate ~58%.
+1. Max success rate occurs at max depth of 2, success rate 58.9%.
 2. 2 levels only results in scores of 6, 5, and 7. 
 3. 5, 6, and 7 make up 92.6% of the quality scores.
 
