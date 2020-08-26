@@ -17,15 +17,15 @@ import data
 
 def train(train_x, train_y):
 	''' this is a function to train all classifiers '''
-	tree_clf = tree.main(train_x, train_y)
-	svm_clf = svm.main(train_x, train_y)
-	knn_clf = knn.main(train_x, train_y)
-	#nn_clf = nn.main(train_x, train_y)
+	tree_clf = tree.train(train_x, train_y)
+	svm_clf = svm.train(train_x, train_y)
+	knn_clf = knn.train(train_x, train_y)
+	nn_clf = nn.train(train_x, train_y)
 	# boost_clf = boost.main(train_x, train_y)
 
-	return [tree_clf, svm_clf, knn_clf]
+	return [tree_clf, svm_clf, knn_clf, nn_clf]
 
-	# , nn_clf, boost_clf
+	# , boost_clf
 
 
 

@@ -7,11 +7,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
 
-def main(train_x, train_y):
-
-	svm = train(train_x, train_y)
-	
-	return svm
 
 
 

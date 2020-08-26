@@ -8,16 +8,6 @@ import math
 
 
 
-def main(train_x, train_y):
-	''' This is the function carry out the decision tree classifier '''
-
-	decision_tree = train(train_x, train_y, 2)
-	#visualize(decision_tree)
-
-	return decision_tree
-
-
-
 
 def tune(training_data, testing_data, depth):
 	''' This is a function to tune the tree depth in an attempt to maximize the rate at which the decision tree correctly classifies wine '''
@@ -42,10 +32,10 @@ def visualize(classifier):
 
 
 
-def train(x, y, depth):
+def train(x, y):
 	''' This is a function to train the decision tree on the parsed data '''
 
-	classifier = tree.DecisionTreeClassifier(max_depth=depth)
+	classifier = tree.DecisionTreeClassifier(max_depth = 2)
 	classifier = classifier.fit(x, y)
 
 	return classifier

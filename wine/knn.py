@@ -8,12 +8,6 @@ import data
 from sklearn.neighbors import KNeighborsClassifier
 
 
-def main(train_x, train_y):
-	''' This is the function carry out the knn classifier '''
-
-	knn = train(train_x, train_y, 400)
-	
-	return knn
 
 
 def tune(training_data, testing_data, k):
@@ -32,10 +26,10 @@ def tune(training_data, testing_data, k):
 
 
 
-def train(x, y, k):
+def train(x, y):
 	''' this is the function to train the knn classifier '''
 
-	classifier = KNeighborsClassifier(n_neighbors = k)
+	classifier = KNeighborsClassifier(n_neighbors = 400)
 	classifier.fit(x, y)
 
 	return classifier
