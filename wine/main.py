@@ -18,8 +18,8 @@ import data
 def run(training_data, testing_data):
 	''' this is a function to run all analyses required '''
 	# tree.main(training_data, testing_data)
-	svm.main(training_data, testing_data)
-	# knn.main(training_data, testing_data)
+	# svm.main(training_data, testing_data)
+	print(knn.tune(training_data, testing_data, 1000))
 	# nn.main(training_data, testing_data)
 	# boost.main(training_data, testing_data)
 

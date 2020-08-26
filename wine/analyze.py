@@ -38,6 +38,46 @@ def decision_tree_curve():
 	plt.ylabel("Test Data Success Rate")
 	plt.show()
 
+def knn_curve():
+	results = [{'k': 10, 'success rate': 0.457}, {'k': 20, 'success rate': 0.476}, {'k': 30, 'success rate': 0.494}, 
+	{'k': 40, 'success rate': 0.476}, {'k': 50, 'success rate': 0.514}, {'k': 60, 'success rate': 0.498}, {'k': 70, 'success rate': 0.512}, 
+	{'k': 80, 'success rate': 0.509}, {'k': 90, 'success rate': 0.502}, {'k': 100, 'success rate': 0.507}, {'k': 110, 'success rate': 0.523}, 
+	{'k': 120, 'success rate': 0.512}, {'k': 130, 'success rate': 0.511}, {'k': 140, 'success rate': 0.51}, {'k': 150, 'success rate': 0.509}, 
+	{'k': 160, 'success rate': 0.512}, {'k': 170, 'success rate': 0.517}, {'k': 180, 'success rate': 0.507}, {'k': 190, 'success rate': 0.505}, 
+	{'k': 200, 'success rate': 0.516}, {'k': 210, 'success rate': 0.523}, {'k': 220, 'success rate': 0.521}, {'k': 230, 'success rate': 0.523}, 
+	{'k': 240, 'success rate': 0.529}, {'k': 250, 'success rate': 0.528}, {'k': 260, 'success rate': 0.53}, {'k': 270, 'success rate': 0.537}, 
+	{'k': 280, 'success rate': 0.535}, {'k': 290, 'success rate': 0.541}, {'k': 300, 'success rate': 0.532}, {'k': 310, 'success rate': 0.532}, 
+	{'k': 320, 'success rate': 0.53}, {'k': 330, 'success rate': 0.535}, {'k': 340, 'success rate': 0.535}, {'k': 350, 'success rate': 0.539}, 
+	{'k': 360, 'success rate': 0.541}, {'k': 370, 'success rate': 0.541}, {'k': 380, 'success rate': 0.546}, {'k': 390, 'success rate': 0.546}, 
+	{'k': 400, 'success rate': 0.547}, {'k': 410, 'success rate': 0.546}, {'k': 420, 'success rate': 0.544}, {'k': 430, 'success rate': 0.543}, 
+	{'k': 440, 'success rate': 0.539}, {'k': 450, 'success rate': 0.54}, {'k': 460, 'success rate': 0.539}, {'k': 470, 'success rate': 0.538}, 
+	{'k': 480, 'success rate': 0.539}, {'k': 490, 'success rate': 0.541}, {'k': 500, 'success rate': 0.534}, {'k': 510, 'success rate': 0.537}, 
+	{'k': 520, 'success rate': 0.538}, {'k': 530, 'success rate': 0.541}, {'k': 540, 'success rate': 0.541}, {'k': 550, 'success rate': 0.538}, 
+	{'k': 560, 'success rate': 0.533}, {'k': 570, 'success rate': 0.531}, {'k': 580, 'success rate': 0.532}, {'k': 590, 'success rate': 0.539}, 
+	{'k': 600, 'success rate': 0.537}, {'k': 610, 'success rate': 0.529}, {'k': 620, 'success rate': 0.539}, {'k': 630, 'success rate': 0.542}, 
+	{'k': 640, 'success rate': 0.532}, {'k': 650, 'success rate': 0.542}, {'k': 660, 'success rate': 0.536}, {'k': 670, 'success rate': 0.529}, 
+	{'k': 680, 'success rate': 0.53}, {'k': 690, 'success rate': 0.526}, {'k': 700, 'success rate': 0.528}, {'k': 710, 'success rate': 0.53}, 
+	{'k': 720, 'success rate': 0.53}, {'k': 730, 'success rate': 0.531}, {'k': 740, 'success rate': 0.532}, {'k': 750, 'success rate': 0.527}, 
+	{'k': 760, 'success rate': 0.528}, {'k': 770, 'success rate': 0.531}, {'k': 780, 'success rate': 0.528}, {'k': 790, 'success rate': 0.527}, 
+	{'k': 800, 'success rate': 0.53}, {'k': 810, 'success rate': 0.532}, {'k': 820, 'success rate': 0.528}, {'k': 830, 'success rate': 0.529}, 
+	{'k': 840, 'success rate': 0.529}, {'k': 850, 'success rate': 0.529}, {'k': 860, 'success rate': 0.529}, {'k': 870, 'success rate': 0.531}, 
+	{'k': 880, 'success rate': 0.532}, {'k': 890, 'success rate': 0.53}, {'k': 900, 'success rate': 0.531}, {'k': 910, 'success rate': 0.53}, 
+	{'k': 920, 'success rate': 0.531}, {'k': 930, 'success rate': 0.527}, {'k': 940, 'success rate': 0.53}, {'k': 950, 'success rate': 0.529}, 
+	{'k': 960, 'success rate': 0.53}, {'k': 970, 'success rate': 0.529}, {'k': 980, 'success rate': 0.528}, {'k': 990, 'success rate': 0.528}]
+
+	x = []
+	y = []
+
+	for each in results:
+		x.append(each['k'])
+		y.append(each['success rate'])
+
+	plt.scatter(x, y)
+	plt.title("k-NN Performance")
+	plt.xlabel("k")
+	plt.ylabel("Test Data Success Rate")
+	plt.show()
+
 def quality_histogram():
 	all_data = data.get_all_data('winequality-white.csv')
 	y = []
@@ -59,5 +99,6 @@ def quality_histogram():
 
 
 if __name__ == '__main__':
-	decision_tree_curve()
-	quality_histogram()
+	# decision_tree_curve()
+	# quality_histogram()
+	# knn_curve()

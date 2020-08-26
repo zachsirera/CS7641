@@ -57,7 +57,7 @@ def test(decision_tree, test_x, test_y):
 		if result == test_y[index]:
 			correct += 1
 
-	return correct / total
+	return round(correct / total, 3)
 
 
 
