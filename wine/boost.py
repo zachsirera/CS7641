@@ -2,14 +2,15 @@
 # Zach Sirera - Fall 2020
 
 # import the necessary external libraries
+from sklearn.ensemble import BaggingClassifier
 from sklearn import tree
 
-def main(training_data, testing_data):
-	''' This is the function carry out the decision tree classifier '''
 
-	pass
 
-def parse(training_data, testing_data):
-	''' This is a function to parse the dataset dictionary and format it properly for the decision tree algorithm implementation '''
+def train(train_x, train_y):
+	''' This is the function carry out the boosted decision tree classifier '''
 
-	pass
+	classifier = BaggingClassifier(tree.DecisionTreeClassifier(max_depth = 2), max_samples=0.5, max_features=0.5)
+	classifier.fit(train_x, train_y)
+
+	return classifier

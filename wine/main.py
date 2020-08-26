@@ -21,11 +21,11 @@ def train(train_x, train_y):
 	svm_clf = svm.train(train_x, train_y)
 	knn_clf = knn.train(train_x, train_y)
 	nn_clf = nn.train(train_x, train_y)
-	# boost_clf = boost.main(train_x, train_y)
+	boost_clf = boost.train(train_x, train_y)
 
-	return [tree_clf, svm_clf, knn_clf, nn_clf]
+	return [tree_clf, svm_clf, knn_clf, nn_clf, boost_clf]
 
-	# , boost_clf
+	# 
 
 
 
@@ -56,4 +56,16 @@ if __name__ == '__main__':
 	classifiers = train(train_x, train_y)
 	results = test(classifiers, test_x, test_y)
 	print(results)
+
+	#print(nn.tune(train_x, train_y, test_x, test_y, 1, 4))
+
+
+
+
+
+
+
+
+
+
 		
