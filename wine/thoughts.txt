@@ -1,0 +1,10 @@
+Decision Tree Thoughts
+
+1. Max success rate occurs at max depth of 2, success rate ~58%.
+2. There are 7 classification labels that the tree is learning, so a "coin flip" is ~14%. 
+3. 2 levels only results in scores of 6, 5, and 7. 
+4. Actual range: 3, 4, 5, 6, 7, 8, 9
+5. 5, 6, and 7 make up 92.6% of the quality scores.
+
+SVM thoughts
+
