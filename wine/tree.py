@@ -9,13 +9,14 @@ import math
 
 
 
-def tune(training_data, testing_data, depth):
+def tune(train_x, train_y, test_x, test_y, depth):
 	''' This is a function to tune the tree depth in an attempt to maximize the rate at which the decision tree correctly classifies wine '''
 
 	results = []
 
 	for i in range(1, depth):
-		pct_correct = main_2(training_data, testing_data, i)
+		decision_tree = train(train_x, train_y, depth)
+		pct_correct = test(decision_tree, test_x, test_y)
 		results.append({'depth': i, 'success rate': round(pct_correct, 3)})
 
 	return results
@@ -29,6 +30,18 @@ def visualize(classifier):
 	cn = ['3', '4', '5', '6', '7', '8', '9']
 	tree.plot_tree(classifier, feature_names = fn, class_names = cn)
 	plt.show()
+
+
+def main_2(training_data, testing_data, depth):
+	''' This is the function carry out the decision tree classifier '''
+
+	train_x, train_y = parse(training_data)
+	test_x, test_y = parse(testing_data)
+
+	decision_tree = train(train_x, train_y, depth)
+	pct_correct = test(decision_tree, test_x, test_y)
+
+	return pct_correct
 
 
 

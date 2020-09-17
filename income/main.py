@@ -25,7 +25,12 @@ def train(train_x, train_y):
 
 	return [tree_clf, svm_clf, knn_clf, nn_clf, boost_clf]
 
-	# 
+def tune(test_x, test_y, train_x, train_y):
+	''' '''
+
+	# tree_results = tree.tune(train_x, train_y, test_x, test_y, depth=40)
+	knn_results = knn.tune(train_x, train_y, test_x, test_y, neighbors=1000)
+	print(knn_results)
 
 
 
@@ -54,12 +59,13 @@ if __name__ == '__main__':
 
 	train_x, train_y, test_x, test_y  = data.main('adult_data.csv')
 	
-	classifiers = train(train_x, train_y)
-	results = test(classifiers, test_x, test_y)
-	print(results)
+	# classifiers = train(train_x, train_y)
+	# results = test(classifiers, test_x, test_y)
+	# print(results)
 
 	#print(nn.tune(train_x, train_y, test_x, test_y, 1, 4))
 
+	tune(train_x, train_y, test_x, test_y)
 
 
 
