@@ -18,12 +18,12 @@ import data
 def train(folds_x, folds_y):
 	''' this is a function to train all classifiers '''
 	tree_clf = tree.train(folds_x, folds_y)
-	# svm_clf = svm.train(folds_x, folds_y)
-	# knn_clf = knn.train(folds_x, folds_y)
-	# nn_clf = nn.train(folds_x, folds_y)
-	# boost_clf = boost.train(folds_x, folds_y)
+	svm_clf = svm.train(folds_x, folds_y)
+	knn_clf = knn.train(folds_x, folds_y)
+	nn_clf = nn.train(folds_x, folds_y)
+	boost_clf = boost.train(folds_x, folds_y)
 
-	return [tree_clf] # , svm_clf, knn_clf, nn_clf, boost_clf
+	return [tree_clf, svm_clf, knn_clf, nn_clf, boost_clf] # 
 
 
 

@@ -26,10 +26,58 @@ def tune(training_data, testing_data, k):
 
 
 
-def train(x, y):
+def train(folds_x, folds_y):
 	''' this is the function to train the knn classifier '''
 
-	classifier = KNeighborsClassifier(n_neighbors = 400)
-	classifier.fit(x, y)
+	folds = len(folds_x)
+	classifiers = []
+	fold_list = gen_fold_list(folds)
 
-	return classifier
+	for i in range(folds):
+
+		training_x_folds = []
+		training_y_folds = []
+
+		for j in fold_list[i]: 	
+			training_x_folds += folds_x[j]
+			training_y_folds += folds_y[j]
+
+		classifier = KNeighborsClassifier(n_neighbors = 400)
+		classifier.fit(training_x_folds, training_y_folds)
+		classifiers.append(classifier)
+
+	return validate(classifiers, folds_x, folds_y)
+
+
+def validate(classifiers, folds_x, folds_y):
+	''' '''
+
+	results = []
+
+	for jindex, classifier in enumerate(classifiers):
+		correct = 0
+		total = 0
+
+		for index, each in enumerate(folds_x[jindex]):
+			total += 1
+			result = classifier.predict([each])
+			if result == folds_y[jindex][index]:
+				correct += 1
+
+		results.append(round(correct / total, 3))
+
+	return classifiers[results.index(max(results))]
+
+
+def gen_fold_list(k):
+
+	a = []
+
+	for i in range(k):
+		b = []
+		for j in range(k):
+			if i != j:
+				b.append(j)
+		a.append(b)
+
+	return a

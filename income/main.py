@@ -1,4 +1,4 @@
-# This is the main driver for the Supervised Learning assingment in Georgia Tech CS 7641 
+# This is the main driver for the Supervised Learning assignment in Georgia Tech CS 7641 
 # Zach Sirera - Fall 2020
 
 
