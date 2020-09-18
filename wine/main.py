@@ -49,15 +49,46 @@ def test(classifiers, test_x, test_y):
 	return results
 
 
+def learning_curve(train_x, train_y, test_x, test_y):
+
+	counts = []
+	curve = []
+	models = ['tree', 'svm', 'knn', 'nn', 'boost']
+
+	for i in range(1000, len(train_x), 200):
+		counts.append(i)
+
+
+	for each in counts:
+		short_train_x = train_x[:each]
+		short_train_y = train_y[:each]
+		classifiers = train(short_train_x, short_train_y)
+		results = test(classifiers, test_x, test_y)
+
+		data = dict()
+		data['size'] = each 
+
+		for index, result in enumerate(results):
+			data[models[index]] = result
+
+		curve.append(data)
+
+	return curve
+
+
+
+
 
 if __name__ == '__main__':
 
 	train_x, train_y, test_x, test_y  = data.main('winequality-white.csv')
-	classifiers = train(train_x, train_y)
-	results = test(classifiers, test_x, test_y)
-	print(results)
+	# classifiers = train(train_x, train_y)
+	# results = test(classifiers, test_x, test_y)
+	# print(results)
 
 	#print(nn.tune(train_x, train_y, test_x, test_y, 1, 4))
+
+	print(learning_curve(train_x, train_y, test_x, test_y))
 
 
 

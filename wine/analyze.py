@@ -98,7 +98,52 @@ def quality_histogram():
 	plt.show()
 
 
+def learning_curve():
+
+	results = [{'size': 1000, 'tree': 0.41, 'svm': 0.48, 'knn': 0.528, 'nn': 0.529, 'boost': 0.506}, 
+	{'size': 1200, 'tree': 0.408, 'svm': 0.48, 'knn': 0.528, 'nn': 0.528, 'boost': 0.529}, 
+	{'size': 1400, 'tree': 0.541, 'svm': 0.485, 'knn': 0.528, 'nn': 0.528, 'boost': 0.554}, 
+	{'size': 1600, 'tree': 0.541, 'svm': 0.486, 'knn': 0.528, 'nn': 0.528, 'boost': 0.528}, 
+	{'size': 1800, 'tree': 0.469, 'svm': 0.506, 'knn': 0.528, 'nn': 0.528, 'boost': 0.567}, 
+	{'size': 2000, 'tree': 0.467, 'svm': 0.506, 'knn': 0.528, 'nn': 0.528, 'boost': 0.554}, 
+	{'size': 2200, 'tree': 0.541, 'svm': 0.535, 'knn': 0.528, 'nn': 0.528, 'boost': 0.589}, 
+	{'size': 2400, 'tree': 0.541, 'svm': 0.545, 'knn': 0.531, 'nn': 0.528, 'boost': 0.607}, 
+	{'size': 2600, 'tree': 0.543, 'svm': 0.541, 'knn': 0.535, 'nn': 0.528, 'boost': 0.569}, 
+	{'size': 2800, 'tree': 0.554, 'svm': 0.542, 'knn': 0.528, 'nn': 0.528, 'boost': 0.546}, 
+	{'size': 3000, 'tree': 0.554, 'svm': 0.57, 'knn': 0.532, 'nn': 0.531, 'boost': 0.602}, 
+	{'size': 3200, 'tree': 0.598, 'svm': 0.588, 'knn': 0.538, 'nn': 0.469, 'boost': 0.596}, 
+	{'size': 3400, 'tree': 0.598, 'svm': 0.582, 'knn': 0.535, 'nn': 0.528, 'boost': 0.576}, 
+	{'size': 3600, 'tree': 0.598, 'svm': 0.583, 'knn': 0.537, 'nn': 0.519, 'boost': 0.581}, 
+	{'size': 3800, 'tree': 0.589, 'svm': 0.586, 'knn': 0.542, 'nn': 0.519, 'boost': 0.597}]
+
+	x = [result['size'] for result in results]
+	tree = [result['tree'] for result in results]
+	svm = [result['svm'] for result in results]
+	knn = [result['knn'] for result in results]
+	nn = [result['nn'] for result in results]
+	boost = [result['boost'] for result in results]
+
+	plt.scatter(x, tree, s=10, c='b', marker="s", label='tree')
+	plt.plot(x, tree, c='b')
+	plt.scatter(x, svm, s=10, c='r', marker="s", label='svm')
+	plt.plot(x, svm, c='r')
+	plt.scatter(x, knn, s=10, c='g', marker="s", label='knn')
+	plt.plot(x, knn, c='g')
+	plt.scatter(x, nn, s=10, c='c', marker="s", label="nn")
+	plt.plot(x, nn, c='c')
+	plt.scatter(x, boost, s=10, c='m', marker="s", label="boost")
+	plt.plot(x, boost, c='m')
+	plt.legend(loc='lower right')
+	plt.title("Wine Learning Curves")
+	plt.ylabel("Model Accuracy")
+	plt.xlabel("Training Examples")
+
+	plt.show()
+
+
+
 if __name__ == '__main__':
 	# decision_tree_curve()
 	# quality_histogram()
 	# knn_curve()
+	# learning_curve()
