@@ -108,31 +108,65 @@ def smaller_knn_curve():
 	plt.ylabel("Test Data Success Rate")
 	plt.show()
 
-def quality_histogram():
-	all_data = data.get_all_data('winequality-white.csv')
-	y = []
+def learning_curve():
 
-	for each in all_data:
-		y.append(int(each['quality']))
+	results = [{'size': 1000, 'tree': 0.793, 'svm': 0.833, 'knn': 0.754, 'nn': 0.757, 'boost': 0.823}, 
+	{'size': 2000, 'tree': 0.792, 'svm': 0.834, 'knn': 0.767, 'nn': 0.757, 'boost': 0.831}, 
+	{'size': 3000, 'tree': 0.796, 'svm': 0.835, 'knn': 0.771, 'nn': 0.746, 'boost': 0.827}, 
+	{'size': 4000, 'tree': 0.799, 'svm': 0.836, 'knn': 0.776, 'nn': 0.746, 'boost': 0.826}, 
+	{'size': 5000, 'tree': 0.804, 'svm': 0.834, 'knn': 0.779, 'nn': 0.746, 'boost': 0.833}, 
+	{'size': 6000, 'tree': 0.811, 'svm': 0.838, 'knn': 0.778, 'nn': 0.746, 'boost': 0.842}, 
+	{'size': 7000, 'tree': 0.82, 'svm': 0.839, 'knn': 0.779, 'nn': 0.746, 'boost': 0.834}, 
+	{'size': 8000, 'tree': 0.827, 'svm': 0.836, 'knn': 0.783, 'nn': 0.746, 'boost': 0.837}, 
+	{'size': 9000, 'tree': 0.823, 'svm': 0.838, 'knn': 0.784, 'nn': 0.746, 'boost': 0.837}, 
+	{'size': 10000, 'tree': 0.828, 'svm': 0.839, 'knn': 0.783, 'nn': 0.746, 'boost': 0.844}, 
+	{'size': 11000, 'tree': 0.825, 'svm': 0.841, 'knn': 0.781, 'nn': 0.746, 'boost': 0.842}, 
+	{'size': 12000, 'tree': 0.83, 'svm': 0.841, 'knn': 0.782, 'nn': 0.746, 'boost': 0.846}, 
+	{'size': 13000, 'tree': 0.837, 'svm': 0.843, 'knn': 0.784, 'nn': 0.746, 'boost': 0.843}, 
+	{'size': 14000, 'tree': 0.834, 'svm': 0.843, 'knn': 0.783, 'nn': 0.746, 'boost': 0.833}, 
+	{'size': 15000, 'tree': 0.835, 'svm': 0.842, 'knn': 0.784, 'nn': 0.748, 'boost': 0.845}, 
+	{'size': 16000, 'tree': 0.831, 'svm': 0.841, 'knn': 0.785, 'nn': 0.746, 'boost': 0.841}, 
+	{'size': 17000, 'tree': 0.833, 'svm': 0.841, 'knn': 0.785, 'nn': 0.746, 'boost': 0.843}, 
+	{'size': 18000, 'tree': 0.837, 'svm': 0.842, 'knn': 0.786, 'nn': 0.746, 'boost': 0.837}, 
+	{'size': 19000, 'tree': 0.836, 'svm': 0.842, 'knn': 0.787, 'nn': 0.748, 'boost': 0.844}, 
+	{'size': 20000, 'tree': 0.836, 'svm': 0.841, 'knn': 0.786, 'nn': 0.746, 'boost': 0.845}, 
+	{'size': 21000, 'tree': 0.84, 'svm': 0.842, 'knn': 0.786, 'nn': 0.746, 'boost': 0.85}, 
+	{'size': 22000, 'tree': 0.834, 'svm': 0.842, 'knn': 0.786, 'nn': 0.746, 'boost': 0.843}, 
+	{'size': 23000, 'tree': 0.829, 'svm': 0.842, 'knn': 0.786, 'nn': 0.746, 'boost': 0.836}, 
+	{'size': 24000, 'tree': 0.834, 'svm': 0.844, 'knn': 0.786, 'nn': 0.746, 'boost': 0.843}]
 
-	print("3 ", round(y.count(3)/4898, 3))
-	print("4 ", round(y.count(4)/4898, 3))
-	print("5 ", round(y.count(5)/4898, 3))
-	print("6 ", round(y.count(6)/4898, 3))
-	print("7 ", round(y.count(7)/4898, 3))
-	print("8 ", round(y.count(8)/4898, 3))
-	print("9 ", round(y.count(9)/4898, 3))
+	x = [result['size'] for result in results]
+	tree = [result['tree'] for result in results]
+	svm = [result['svm'] for result in results]
+	knn = [result['knn'] for result in results]
+	nn = [result['nn'] for result in results]
+	boost = [result['boost'] for result in results]
 
-	plt.hist(y, 7)
-	plt.title("Quality Score Distribution")
+	plt.scatter(x, tree, s=10, c='b', marker="s", label='tree')
+	plt.plot(x, tree, c='b')
+	plt.scatter(x, svm, s=10, c='r', marker="s", label='svm')
+	plt.plot(x, svm, c='r')
+	plt.scatter(x, knn, s=10, c='g', marker="s", label='knn')
+	plt.plot(x, knn, c='g')
+	plt.scatter(x, nn, s=10, c='c', marker="s", label="nn")
+	plt.plot(x, nn, c='c')
+	plt.scatter(x, boost, s=10, c='m', marker="s", label="boost")
+	plt.plot(x, boost, c='m')
+	plt.legend(loc='lower right')
+	plt.title("Wine Learning Curves")
+	plt.ylabel("Model Accuracy")
+	plt.xlabel("Training Examples")
+
 	plt.show()
 
 
+
 if __name__ == '__main__':
-	decision_tree_curve()
+	# decision_tree_curve()
 	# quality_histogram()
-	# knn_curve()
+	knn_curve()
 	smaller_knn_curve()
+	# learning_curve()
 
 
 
