@@ -10,7 +10,7 @@ from sklearn import tree
 def train(train_x, train_y):
 	''' This is the function carry out the boosted decision tree classifier '''
 
-	classifier = BaggingClassifier(tree.DecisionTreeClassifier(max_depth = 2), max_samples=0.5, max_features=0.5)
+	classifier = BaggingClassifier(tree.DecisionTreeClassifier(max_depth = 19), max_samples=0.5, max_features=0.5)
 	classifier.fit(train_x, train_y)
 
 	return classifier

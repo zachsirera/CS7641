@@ -42,7 +42,7 @@ def train(folds_x, folds_y):
 			training_x_folds += folds_x[j]
 			training_y_folds += folds_y[j]
 
-		classifier = KNeighborsClassifier(n_neighbors = 400)
+		classifier = KNeighborsClassifier(n_neighbors = 16)
 		classifier.fit(training_x_folds, training_y_folds)
 		classifiers.append(classifier)
 

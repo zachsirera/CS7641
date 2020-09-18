@@ -23,7 +23,7 @@ def train(folds_x, folds_y):
 			training_x_folds += folds_x[j]
 			training_y_folds += folds_y[j]
 
-		classifier = BaggingClassifier(tree.DecisionTreeClassifier(max_depth = 2), max_samples=0.5, max_features=0.5)
+		classifier = BaggingClassifier(tree.DecisionTreeClassifier(max_depth = 15), max_samples=0.5, max_features=0.5)
 		classifier.fit(training_x_folds, training_y_folds)
 		classifiers.append(classifier)
 

@@ -38,7 +38,62 @@ def decision_tree_curve():
 	plt.show()
 
 def knn_curve():
-	results = [{'k': 10, 'success rate': 0.77}, {'k': 20, 'success rate': 0.782}, {'k': 30, 'success rate': 0.779}, {'k': 40, 'success rate': 0.774}, {'k': 50, 'success rate': 0.771}, {'k': 60, 'success rate': 0.768}, {'k': 70, 'success rate': 0.766}, {'k': 80, 'success rate': 0.764}, {'k': 90, 'success rate': 0.762}, {'k': 100, 'success rate': 0.761}, {'k': 110, 'success rate': 0.76}, {'k': 120, 'success rate': 0.759}, {'k': 130, 'success rate': 0.758}, {'k': 140, 'success rate': 0.757}, {'k': 150, 'success rate': 0.757}, {'k': 160, 'success rate': 0.756}, {'k': 170, 'success rate': 0.756}, {'k': 180, 'success rate': 0.756}, {'k': 190, 'success rate': 0.756}, {'k': 200, 'success rate': 0.756}, {'k': 210, 'success rate': 0.756}, {'k': 220, 'success rate': 0.756}, {'k': 230, 'success rate': 0.755}, {'k': 240, 'success rate': 0.755}, {'k': 250, 'success rate': 0.755}, {'k': 260, 'success rate': 0.755}, {'k': 270, 'success rate': 0.755}, {'k': 280, 'success rate': 0.755}, {'k': 290, 'success rate': 0.755}, {'k': 300, 'success rate': 0.754}, {'k': 310, 'success rate': 0.754}, {'k': 320, 'success rate': 0.754}, {'k': 330, 'success rate': 0.754}, {'k': 340, 'success rate': 0.754}, {'k': 350, 'success rate': 0.753}, {'k': 360, 'success rate': 0.753}, {'k': 370, 'success rate': 0.753}, {'k': 380, 'success rate': 0.753}, {'k': 390, 'success rate': 0.753}, {'k': 400, 'success rate': 0.753}, {'k': 410, 'success rate': 0.753}, {'k': 420, 'success rate': 0.752}, {'k': 430, 'success rate': 0.752}, {'k': 440, 'success rate': 0.752}, {'k': 450, 'success rate': 0.752}, {'k': 460, 'success rate': 0.752}, {'k': 470, 'success rate': 0.752}, {'k': 480, 'success rate': 0.752}, {'k': 490, 'success rate': 0.752}, {'k': 500, 'success rate': 0.752}, {'k': 510, 'success rate': 0.752}, {'k': 520, 'success rate': 0.752}, {'k': 530, 'success rate': 0.752}, {'k': 540, 'success rate': 0.752}, {'k': 550, 'success rate': 0.752}, {'k': 560, 'success rate': 0.752}, {'k': 570, 'success rate': 0.752}, {'k': 580, 'success rate': 0.752}, {'k': 590, 'success rate': 0.752}, {'k': 600, 'success rate': 0.752}, {'k': 610, 'success rate': 0.752}, {'k': 620, 'success rate': 0.752}, {'k': 630, 'success rate': 0.752}, {'k': 640, 'success rate': 0.752}, {'k': 650, 'success rate': 0.752}, {'k': 660, 'success rate': 0.752}, {'k': 670, 'success rate': 0.752}, {'k': 680, 'success rate': 0.752}, {'k': 690, 'success rate': 0.752}, {'k': 700, 'success rate': 0.752}, {'k': 710, 'success rate': 0.752}, {'k': 720, 'success rate': 0.752}, {'k': 730, 'success rate': 0.752}, {'k': 740, 'success rate': 0.752}, {'k': 750, 'success rate': 0.752}, {'k': 760, 'success rate': 0.752}, {'k': 770, 'success rate': 0.752}, {'k': 780, 'success rate': 0.752}, {'k': 790, 'success rate': 0.752}, {'k': 800, 'success rate': 0.752}, {'k': 810, 'success rate': 0.752}, {'k': 820, 'success rate': 0.752}, {'k': 830, 'success rate': 0.752}, {'k': 840, 'success rate': 0.752}, {'k': 850, 'success rate': 0.752}, {'k': 860, 'success rate': 0.752}, {'k': 870, 'success rate': 0.752}, {'k': 880, 'success rate': 0.752}, {'k': 890, 'success rate': 0.752}, {'k': 900, 'success rate': 0.752}, {'k': 910, 'success rate': 0.752}, {'k': 920, 'success rate': 0.752}, {'k': 930, 'success rate': 0.752}, {'k': 940, 'success rate': 0.752}, {'k': 950, 'success rate': 0.752}, {'k': 960, 'success rate': 0.752}, {'k': 970, 'success rate': 0.752}, {'k': 980, 'success rate': 0.752}, {'k': 990, 'success rate': 0.752}]
+	results = [{'k': 10, 'success rate': 0.77}, {'k': 20, 'success rate': 0.782}, {'k': 30, 'success rate': 0.779}, 
+	{'k': 40, 'success rate': 0.774}, {'k': 50, 'success rate': 0.771}, {'k': 60, 'success rate': 0.768}, 
+	{'k': 70, 'success rate': 0.766}, {'k': 80, 'success rate': 0.764}, {'k': 90, 'success rate': 0.762}, 
+	{'k': 100, 'success rate': 0.761}, {'k': 110, 'success rate': 0.76}, {'k': 120, 'success rate': 0.759}, 
+	{'k': 130, 'success rate': 0.758}, {'k': 140, 'success rate': 0.757}, {'k': 150, 'success rate': 0.757}, 
+	{'k': 160, 'success rate': 0.756}, {'k': 170, 'success rate': 0.756}, {'k': 180, 'success rate': 0.756}, 
+	{'k': 190, 'success rate': 0.756}, {'k': 200, 'success rate': 0.756}, {'k': 210, 'success rate': 0.756}, 
+	{'k': 220, 'success rate': 0.756}, {'k': 230, 'success rate': 0.755}, {'k': 240, 'success rate': 0.755}, 
+	{'k': 250, 'success rate': 0.755}, {'k': 260, 'success rate': 0.755}, {'k': 270, 'success rate': 0.755}, 
+	{'k': 280, 'success rate': 0.755}, {'k': 290, 'success rate': 0.755}, {'k': 300, 'success rate': 0.754}, 
+	{'k': 310, 'success rate': 0.754}, {'k': 320, 'success rate': 0.754}, {'k': 330, 'success rate': 0.754}, 
+	{'k': 340, 'success rate': 0.754}, {'k': 350, 'success rate': 0.753}, {'k': 360, 'success rate': 0.753}, 
+	{'k': 370, 'success rate': 0.753}, {'k': 380, 'success rate': 0.753}, {'k': 390, 'success rate': 0.753}, 
+	{'k': 400, 'success rate': 0.753}, {'k': 410, 'success rate': 0.753}, {'k': 420, 'success rate': 0.752}, 
+	{'k': 430, 'success rate': 0.752}, {'k': 440, 'success rate': 0.752}, {'k': 450, 'success rate': 0.752}, 
+	{'k': 460, 'success rate': 0.752}, {'k': 470, 'success rate': 0.752}, {'k': 480, 'success rate': 0.752}, 
+	{'k': 490, 'success rate': 0.752}, {'k': 500, 'success rate': 0.752}, {'k': 510, 'success rate': 0.752}, 
+	{'k': 520, 'success rate': 0.752}, {'k': 530, 'success rate': 0.752}, {'k': 540, 'success rate': 0.752}, 
+	{'k': 550, 'success rate': 0.752}, {'k': 560, 'success rate': 0.752}, {'k': 570, 'success rate': 0.752}, 
+	{'k': 580, 'success rate': 0.752}, {'k': 590, 'success rate': 0.752}, {'k': 600, 'success rate': 0.752}, 
+	{'k': 610, 'success rate': 0.752}, {'k': 620, 'success rate': 0.752}, {'k': 630, 'success rate': 0.752}, 
+	{'k': 640, 'success rate': 0.752}, {'k': 650, 'success rate': 0.752}, {'k': 660, 'success rate': 0.752}, 
+	{'k': 670, 'success rate': 0.752}, {'k': 680, 'success rate': 0.752}, {'k': 690, 'success rate': 0.752}, 
+	{'k': 700, 'success rate': 0.752}, {'k': 710, 'success rate': 0.752}, {'k': 720, 'success rate': 0.752}, 
+	{'k': 730, 'success rate': 0.752}, {'k': 740, 'success rate': 0.752}, {'k': 750, 'success rate': 0.752}, 
+	{'k': 760, 'success rate': 0.752}, {'k': 770, 'success rate': 0.752}, {'k': 780, 'success rate': 0.752}, 
+	{'k': 790, 'success rate': 0.752}, {'k': 800, 'success rate': 0.752}, {'k': 810, 'success rate': 0.752}, 
+	{'k': 820, 'success rate': 0.752}, {'k': 830, 'success rate': 0.752}, {'k': 840, 'success rate': 0.752}, 
+	{'k': 850, 'success rate': 0.752}, {'k': 860, 'success rate': 0.752}, {'k': 870, 'success rate': 0.752}, 
+	{'k': 880, 'success rate': 0.752}, {'k': 890, 'success rate': 0.752}, {'k': 900, 'success rate': 0.752}, 
+	{'k': 910, 'success rate': 0.752}, {'k': 920, 'success rate': 0.752}, {'k': 930, 'success rate': 0.752}, 
+	{'k': 940, 'success rate': 0.752}, {'k': 950, 'success rate': 0.752}, {'k': 960, 'success rate': 0.752}, 
+	{'k': 970, 'success rate': 0.752}, {'k': 980, 'success rate': 0.752}, {'k': 990, 'success rate': 0.752}]
+
+	x = []
+	y = []
+
+	for each in results:
+		x.append(each['k'])
+		y.append(each['success rate'])
+
+	plt.scatter(x, y)
+	plt.title("k-NN Performance")
+	plt.xlabel("k")
+	plt.ylabel("Test Data Success Rate")
+	plt.show()
+
+
+def smaller_knn_curve():
+	results = [{'k': 10, 'success rate': 0.77}, {'k': 11, 'success rate': 0.783}, {'k': 12, 'success rate': 0.777}, 
+	{'k': 13, 'success rate': 0.784}, {'k': 14, 'success rate': 0.779}, {'k': 15, 'success rate': 0.785}, 
+	{'k': 16, 'success rate': 0.783}, {'k': 17, 'success rate': 0.784}, {'k': 18, 'success rate': 0.783}, 
+	{'k': 19, 'success rate': 0.783}, {'k': 20, 'success rate': 0.782}, {'k': 21, 'success rate': 0.783}, 
+	{'k': 22, 'success rate': 0.783}, {'k': 23, 'success rate': 0.782}, {'k': 24, 'success rate': 0.782}, 
+	{'k': 25, 'success rate': 0.781}, {'k': 26, 'success rate': 0.781}, {'k': 27, 'success rate': 0.78}, 
+	{'k': 28, 'success rate': 0.779}, {'k': 29, 'success rate': 0.779}]
 
 	x = []
 	y = []
@@ -77,3 +132,8 @@ if __name__ == '__main__':
 	decision_tree_curve()
 	# quality_histogram()
 	# knn_curve()
+	smaller_knn_curve()
+
+
+
+

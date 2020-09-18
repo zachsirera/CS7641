@@ -48,7 +48,7 @@ def train(folds_x, folds_y):
 			training_x_folds += folds_x[j]
 			training_y_folds += folds_y[j]
 
-		classifier = tree.DecisionTreeClassifier(max_depth = 2)
+		classifier = tree.DecisionTreeClassifier(max_depth = 15)
 		classifier = classifier.fit(training_x_folds, training_y_folds)
 		classifiers.append(classifier)
 

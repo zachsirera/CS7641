@@ -36,7 +36,7 @@ def visualize(classifier):
 def train(x, y):
 	''' This is a function to train the decision tree on the parsed data '''
 
-	classifier = tree.DecisionTreeClassifier(max_depth = 19)
+	classifier = tree.DecisionTreeClassifier(max_depth = 15)
 	classifier = classifier.fit(x, y)
 
 	return classifier

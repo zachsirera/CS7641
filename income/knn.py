@@ -14,7 +14,7 @@ def tune(train_x, train_y, test_x, test_y, neighbors):
 	''' this is a function to tune the knn classifier by tweaking k to maximize the success rate '''
 	results = []
 
-	for i in range(10, neighbors, 10):
+	for i in range(10, neighbors):
 		classifier = train_2(train_x, train_y, i)
 		pct_correct = test(classifier, test_x, test_y)
 		results.append({'k': i, 'success rate': round(pct_correct, 3)})
@@ -26,7 +26,7 @@ def tune(train_x, train_y, test_x, test_y, neighbors):
 def train(x, y):
 	''' this is the function to train the knn classifier '''
 
-	classifier = KNeighborsClassifier(n_neighbors = 400)
+	classifier = KNeighborsClassifier(n_neighbors = 15)
 	classifier.fit(x, y)
 
 	return classifier
