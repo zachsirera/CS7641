@@ -13,7 +13,7 @@ from sklearn.svm import SVC
 def train(x, y):
 	''' This is a function to train the classifier '''
 
-	classifier = make_pipeline(StandardScaler(), SVC(gamma='auto'))
+	classifier = make_pipeline(StandardScaler(), SVC(gamma='auto', probability=True))
 	classifier.fit(x, y)
 
 	return classifier

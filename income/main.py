@@ -13,6 +13,8 @@ import tree
 import data
 
 # import the necessary external libraries
+import sklearn.metrics as metrics
+import matplotlib.pyplot as plt
 
 
 def train(train_x, train_y):
@@ -79,21 +81,67 @@ def learning_curve(train_x, train_y, test_x, test_y):
 
 	return curve
 
+def roc(classifiers, test_x, test_y):
+	''' this is a function to generate a Receiver Operator Characteristic Curve for the classifiers'''
+
+
+	plt.title('Receiver Operating Characteristic')
+	
+	colors = ['b', 'r', 'g', 'c', 'm']
+	labels = ['tree', 'svm', 'knn', 'nn', 'boost']
+	
+
+
+	for jindex, classifier in enumerate(classifiers):
+		probs = []
+		for index, each in enumerate(test_x):
+			result = classifier.predict([each])
+			prob = classifier.predict_proba([each])
+			correct = test_y[index]
+			probs.append(prob[:,1][0])
+
+		
+		
+
+		fpr, tpr, threshold = metrics.roc_curve(test_y, probs, pos_label=2)
+		roc_auc = metrics.auc(fpr, tpr)
+		print(labels[jindex], roc_auc)
+
+		plt.plot(fpr, tpr, colors[jindex], label = labels[jindex])
+		plt.plot([0, 1], [0, 1],'r--')
+		plt.xlim([0, 1])
+		plt.ylim([0, 1])
+
+	plt.legend(loc = 'lower right')
+	plt.ylabel('True Positive Rate')
+	plt.xlabel('False Positive Rate')
+	plt.show()
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
 
 	train_x, train_y, test_x, test_y  = data.main('adult_data.csv')
 	
-	# classifiers = train(train_x, train_y)
+	###### un-comment out these lines to perform the main analysis ######
+	classifiers = train(train_x, train_y)
 	# results = test(classifiers, test_x, test_y)
 	# print(results)
 
-	# print(nn.tune(train_x, train_y, test_x, test_y, 1, 4))
-
+	##### un-comment out this line to perform the tuning of those models which require tuning. 
 	# tune(train_x, train_y, test_x, test_y)
 
-	print(learning_curve(train_x, train_y, test_x, test_y))
+	##### un-comment out this line to generate the ROC curve #####
+	roc(classifiers, test_x, test_y)
+
+
+
+	
 
 
 
