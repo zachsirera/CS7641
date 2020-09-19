@@ -153,7 +153,7 @@ def learning_curve():
 	plt.scatter(x, boost, s=10, c='m', marker="s", label="boost")
 	plt.plot(x, boost, c='m')
 	plt.legend(loc='lower right')
-	plt.title("Wine Learning Curves")
+	plt.title("Adult Learning Curves")
 	plt.ylabel("Model Accuracy")
 	plt.xlabel("Training Examples")
 
@@ -164,9 +164,9 @@ def learning_curve():
 if __name__ == '__main__':
 	# decision_tree_curve()
 	# quality_histogram()
-	knn_curve()
-	smaller_knn_curve()
-	# learning_curve()
+	# knn_curve()
+	# smaller_knn_curve()
+	learning_curve()
 
 
 
