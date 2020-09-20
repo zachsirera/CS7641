@@ -162,10 +162,10 @@ def learning_curve():
 
 
 if __name__ == '__main__':
-	# decision_tree_curve()
-	# quality_histogram()
-	# knn_curve()
-	# smaller_knn_curve()
+	decision_tree_curve()
+	quality_histogram()
+	knn_curve()
+	smaller_knn_curve()
 	learning_curve()
 
 

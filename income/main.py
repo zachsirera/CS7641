@@ -154,7 +154,7 @@ if __name__ == '__main__':
 	###### un-comment out these lines to perform the main analysis ######
 	classifiers = train(train_x, train_y)
 	results = test(classifiers, test_x, test_y)
-	# print(results)
+	print(results)
 
 	##### un-comment out this line to perform the tuning of those models which require tuning. 
 	# tune(train_x, train_y, test_x, test_y)
